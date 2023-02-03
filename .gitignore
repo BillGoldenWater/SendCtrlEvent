@@ -2,3 +2,4 @@
 .idea
 SendCtrlEvent.iml
 Cargo.lock
+.DS_Store
