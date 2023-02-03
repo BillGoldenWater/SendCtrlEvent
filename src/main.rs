@@ -21,6 +21,9 @@ fn send(process_id: u32) {
 
     let syringe = Syringe::for_process(target_process);
 
-    syringe.inject("./send_ctrl_event.dll").unwrap();
+    let mut dll_path = std::env::current_exe().unwrap();
+    dll_path.set_file_name("send_ctrl_event.dll");
+
+    syringe.inject(dll_path.as_path()).unwrap();
   }
 }
